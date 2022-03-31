@@ -2,8 +2,8 @@ package com.example.biapp.di
 
 import com.example.biapp.data.AppRepository
 import com.example.biapp.data.AppRepositoryImpl
-import com.example.biapp.data.local.sample.SampleDataSource
-import com.example.biapp.data.local.sample.SampleDataSourceImpl
+import com.example.biapp.data.local.sample.LocalDataSource
+import com.example.biapp.data.local.sample.LocalDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,6 +20,6 @@ interface DataSourceModule {
 
     @Binds
     fun bindSampleDataSource(
-        impl: SampleDataSourceImpl,
-    ): SampleDataSource
+        impl: LocalDataSourceImpl,
+    ): LocalDataSource
 }

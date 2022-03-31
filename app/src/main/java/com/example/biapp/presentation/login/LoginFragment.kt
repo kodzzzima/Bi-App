@@ -38,5 +38,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         binding.btnIntern.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_myResumesFragment)
         }
+        binding.btnEmployer.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_vacanciesFragment3)
+        }
+
     }
 }

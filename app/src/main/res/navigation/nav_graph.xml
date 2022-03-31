@@ -13,10 +13,25 @@
         <action
             android:id="@+id/action_loginFragment_to_myResumesFragment"
             app:destination="@id/myResumesFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_vacanciesFragment3"
+            app:destination="@id/vacanciesFragment3" />
     </fragment>
     <fragment
         android:id="@+id/myResumesFragment"
         android:name="com.example.biapp.presentation.intern.myresumes.MyResumesFragment"
         android:label="fragment_my_resumes"
         tools:layout="@layout/fragment_my_resumes" />
+    <fragment
+        android:id="@+id/createVacancyFragment"
+        android:name="com.example.biapp.presentation.employer.createvacancy.CreateVacancyFragment"
+        android:label="CreateVacancyFragment" />
+    <fragment
+        android:id="@+id/vacanciesFragment3"
+        android:name="com.example.biapp.presentation.employer.vacancies.VacanciesFragment"
+        android:label="VacanciesFragment" >
+        <action
+            android:id="@+id/action_vacanciesFragment3_to_createVacancyFragment"
+            app:destination="@id/createVacancyFragment" />
+    </fragment>
 </navigation>
