@@ -10,6 +10,8 @@ class ResumeItemEntity(
     @PrimaryKey
     @ColumnInfo(name = ID)
     var id: Int = 0,
+    @ColumnInfo(name = "user_id")
+    val userId: String,
     var title: String,
     var name: String,
     var skills: String,

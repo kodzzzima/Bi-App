@@ -1,5 +1,6 @@
 package com.example.biapp.presentation.employer.vacancies
 
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,7 +16,10 @@ import kotlin.coroutines.CoroutineContext
 @HiltViewModel
 class MyVacanciesViewModel @Inject constructor(
     private val appRepository: AppRepository,
+    private val sharedPreferences: SharedPreferences,
 ) : ViewModel(), CoroutineScope {
+
+    private val userLogin = sharedPreferences.getString("user_id", "") ?: ""
 
     private val _vacanciesLiveData: MutableLiveData<List<VacancyItem>> =
         MutableLiveData()
@@ -28,7 +32,7 @@ class MyVacanciesViewModel @Inject constructor(
 
     fun getSampleList() {
         launch {
-            _vacanciesLiveData.postValue(appRepository.getAllLocalVacancies())
+            _vacanciesLiveData.postValue(appRepository.getAllLocalVacanciesByCreatorId(userLogin))
         }
     }
 

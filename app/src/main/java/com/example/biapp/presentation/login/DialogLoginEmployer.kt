@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,6 +30,13 @@ class DialogLoginEmployer() : BottomSheetDialogFragment() {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
+    private val viewModel: LoginViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogStyle)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,13 +50,33 @@ class DialogLoginEmployer() : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnGo.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_vacanciesFragment3)
-            sharedPreferences.edit().putString("authorized_user", Authorized.Employer.name).apply()
-            dismiss()
-
-            setNavView()
-
+            if (binding.editLogin.text.toString().isEmpty() &&
+                binding.editPassword.text.toString().isEmpty()
+            ) {
+                Toast.makeText(requireContext(), "Заполните все поля", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.getUser(
+                    binding.editLogin.text.toString(),
+                    binding.editPassword.text.toString(),
+                )
+            }
         }
+            viewModel.userLiveData.observe(viewLifecycleOwner) {
+                if (it) {
+                    findNavController().navigate(R.id.action_loginFragment_to_vacanciesFragment3)
+                    sharedPreferences.edit().putString("authorized_user", Authorized.Intern.name)
+                        .apply()
+                    sharedPreferences.edit().putString("user_id", binding.editLogin.text.toString())
+                        .apply()
+                    dismiss()
+
+                    setNavView()
+                } else {
+                    Toast.makeText(requireContext(), "Неправильный пароль", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
     }
     private fun setNavView() {
 

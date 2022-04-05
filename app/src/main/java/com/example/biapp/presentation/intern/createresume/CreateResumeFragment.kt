@@ -1,5 +1,6 @@
 package com.example.biapp.presentation.intern.createresume
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,11 +20,17 @@ import com.example.biapp.presentation.employer.vacancies.VacancyItem
 import com.example.biapp.presentation.sample.SampleAdapter
 import com.example.biapp.presentation.sample.SampleViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlin.random.Random
 
 
 @AndroidEntryPoint
 class CreateResumeFragment : Fragment(R.layout.fragment_create_resume) {
+
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
+
+    private lateinit var userLogin :String
 
     private val viewModel: CreateResumeViewModel by viewModels()
 
@@ -34,6 +41,7 @@ class CreateResumeFragment : Fragment(R.layout.fragment_create_resume) {
 
         binding = FragmentCreateResumeBinding.bind(view)
 
+        userLogin = sharedPreferences.getString("user_id", "") ?: ""
         setupClickListeners()
 
     }
@@ -52,6 +60,7 @@ class CreateResumeFragment : Fragment(R.layout.fragment_create_resume) {
                     skills = binding.inputRef.text.toString(),
                     name = binding.inputTitle.text.toString(),
                     contact = binding.inputContact.text.toString(),
+                    userId = userLogin
                 )
                 viewModel.insertData(resumeItem)
                 findNavController().navigateUp()

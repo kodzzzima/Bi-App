@@ -10,6 +10,8 @@ class VacancyItemEntity(
     @PrimaryKey
     @ColumnInfo(name = ID)
     var id: Int = 0,
+    @ColumnInfo(name = "user_id")
+    val userId: String,
     @ColumnInfo(name = TITLE)
     var title: String,
     @ColumnInfo(name = "ref")
