@@ -15,8 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BiApp" >
         <activity
-            android:name=".presentation.intern.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
+            android:label="Авторизация"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

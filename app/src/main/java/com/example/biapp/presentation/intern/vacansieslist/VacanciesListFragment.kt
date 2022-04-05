@@ -1,30 +1,30 @@
-package com.example.biapp.presentation.employer.vacancies
+package com.example.biapp.presentation.intern.vacansieslist
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.biapp.R
-import com.example.biapp.databinding.FragmentVacanciesBinding
+import com.example.biapp.databinding.FragmentVacanciesListBinding
+import com.example.biapp.presentation.employer.vacancies.VacancyItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VacanciesFragment : Fragment(R.layout.fragment_vacancies) {
+class VacanciesListFragment : Fragment(R.layout.fragment_vacancies_list) {
 
-    private val viewModel: VacanciesViewModel by viewModels()
+    private val viewModel: VacanciesListViewModel by viewModels()
 
-    private lateinit var binding: FragmentVacanciesBinding
+    private lateinit var binding: FragmentVacanciesListBinding
 
     private val vacanciesAdapter by lazy {
-        VacanciesAdapter(onItemClick = ::onItemClicked)
+        VacanciesListAdapter(onItemClick = ::onItemClicked)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = FragmentVacanciesBinding.bind(view)
+        binding = FragmentVacanciesListBinding.bind(view)
 
         setupClickListeners()
 
@@ -34,10 +34,6 @@ class VacanciesFragment : Fragment(R.layout.fragment_vacancies) {
     }
 
     private fun setupClickListeners() {
-
-        binding.btnCreate.setOnClickListener {
-            findNavController().navigate(R.id.action_vacanciesFragment3_to_createVacancyFragment)
-        }
 
         binding.swipeContainer.setOnRefreshListener {
             viewModel.getSampleList()

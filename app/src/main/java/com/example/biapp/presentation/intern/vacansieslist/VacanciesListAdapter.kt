@@ -1,4 +1,4 @@
-package com.example.biapp.presentation.employer.vacancies
+package com.example.biapp.presentation.intern.vacansieslist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,24 +6,25 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.biapp.databinding.ItemVacancyBinding
+import com.example.biapp.presentation.employer.vacancies.VacancyItem
 import javax.inject.Inject
 
-class VacanciesAdapter @Inject constructor(
+class VacanciesListAdapter @Inject constructor(
     private val onItemClick: (VacancyItem) -> Unit,
-) : ListAdapter<VacancyItem, VacanciesViewHolder>(DetectionDiffCallback()) {
+) : ListAdapter<VacancyItem, VacanciesListViewHolder>(DetectionDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VacanciesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VacanciesListViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemVacancyBinding.inflate(layoutInflater, parent, false)
 
-        return VacanciesViewHolder(binding, onItemClick)
+        return VacanciesListViewHolder(binding, onItemClick)
     }
 
-    override fun onBindViewHolder(holder: VacanciesViewHolder, position: Int) =
-        holder.bind(getItem(position))
+    override fun onBindViewHolder(holderMy: VacanciesListViewHolder, position: Int) =
+        holderMy.bind(getItem(position))
 }
 
-class VacanciesViewHolder(
+class VacanciesListViewHolder(
     private val binding: ItemVacancyBinding,
     private val onItemClick: (VacancyItem) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {

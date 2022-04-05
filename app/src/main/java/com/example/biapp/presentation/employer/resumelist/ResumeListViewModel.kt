@@ -1,4 +1,4 @@
-package com.example.biapp.presentation.intern.myresumes
+package com.example.biapp.presentation.employer.resumelist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.biapp.data.AppRepository
 import com.example.biapp.data.local.sample.SampleItem
-import com.example.biapp.presentation.employer.resumelist.ResumeItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -14,23 +13,22 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
-class MyResumesViewModel @Inject constructor(
+class ResumeListViewModel @Inject constructor(
     private val appRepository: AppRepository,
 ) : ViewModel(), CoroutineScope {
 
-    private val _myResumesLiveData: MutableLiveData<List<ResumeItem>> =
+    private val _resumeListLiveData: MutableLiveData<List<ResumeItem>> =
         MutableLiveData()
-    val myResumesLiveData: LiveData<List<ResumeItem>>
-        get() = _myResumesLiveData
+    val resumeListLiveData: LiveData<List<ResumeItem>>
+        get() = _resumeListLiveData
 
     init {
-        getMyResumesList()
+        getSampleList()
     }
 
-    fun getMyResumesList() {
+    fun getSampleList() {
         launch {
-            _myResumesLiveData.postValue(appRepository.getAllLocalResumes()
-            )
+            _resumeListLiveData.postValue(appRepository.getAllLocalResumes())
         }
     }
 

@@ -1,40 +1,38 @@
-package com.example.biapp.presentation.intern.myresumes
+package com.example.biapp.presentation.employer.resumelist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.biapp.data.local.sample.SampleItem
-import com.example.biapp.databinding.FragmentMyResumesBinding
-import com.example.biapp.databinding.ItemMyResumeBinding
-import com.example.biapp.presentation.employer.resumelist.ResumeItem
+import com.example.biapp.databinding.ItemResumeListBinding
+import com.example.biapp.databinding.ItemVacancyBinding
 import javax.inject.Inject
 
-class MyResumesAdapter @Inject constructor(
+class ResumeListAdapter @Inject constructor(
     private val onItemClick: (ResumeItem) -> Unit,
-) : ListAdapter<ResumeItem, MyResumesViewHolder>(DetectionDiffCallback()) {
+) : ListAdapter<ResumeItem, ResumeListViewHolder>(DetectionDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyResumesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResumeListViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemMyResumeBinding.inflate(layoutInflater, parent, false)
+        val binding = ItemResumeListBinding.inflate(layoutInflater, parent, false)
 
-        return MyResumesViewHolder(binding, onItemClick)
+        return ResumeListViewHolder(binding, onItemClick)
     }
 
-    override fun onBindViewHolder(holder: MyResumesViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ResumeListViewHolder, position: Int) =
         holder.bind(getItem(position))
 }
 
-class MyResumesViewHolder(
-    private val binding: ItemMyResumeBinding,
+class ResumeListViewHolder(
+    private val binding: ItemResumeListBinding,
     private val onItemClick: (ResumeItem) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(resumeItem: ResumeItem) {
         with(binding) {
-            binding.title.text = resumeItem.title
-            binding.company.text = resumeItem.contact
-            binding.ref.text = resumeItem.skills
+            title.text = resumeItem.title
+            ref.text = resumeItem.skills
+            company.text = resumeItem.contact
         }
 
         itemView.setOnClickListener { onItemClick(resumeItem) }

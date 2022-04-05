@@ -1,4 +1,4 @@
-package com.example.biapp.presentation.intern.myresumes
+package com.example.biapp.presentation.employer.vacancies
 
 import android.os.Bundle
 import android.view.View
@@ -7,62 +7,59 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.biapp.R
-import com.example.biapp.data.local.sample.SampleItem
-import com.example.biapp.databinding.FragmentMyResumesBinding
-import com.example.biapp.presentation.employer.resumelist.ResumeItem
+import com.example.biapp.databinding.FragmentMyVacanciesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MyResumesFragment : Fragment(R.layout.fragment_my_resumes) {
+class MyVacanciesFragment : Fragment(R.layout.fragment_my_vacancies) {
 
-    private val viewModel: MyResumesViewModel by viewModels()
+    private val viewModelMy: MyVacanciesViewModel by viewModels()
 
-    private lateinit var binding: FragmentMyResumesBinding
+    private lateinit var binding: FragmentMyVacanciesBinding
 
-    private val myResumesAdapter by lazy {
-        MyResumesAdapter(onItemClick = ::onItemClicked)
+    private val vacanciesAdapter by lazy {
+        MyVacanciesAdapter(onItemClick = ::onItemClicked)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = FragmentMyResumesBinding.bind(view)
+        binding = FragmentMyVacanciesBinding.bind(view)
 
         setupClickListeners()
 
         setUpSampleList()
 
-        viewModel.myResumesLiveData.observe(viewLifecycleOwner, ::handleMyResumesList)
+        viewModelMy.vacanciesLiveData.observe(viewLifecycleOwner, ::handleVacancyList)
     }
 
     private fun setupClickListeners() {
+
         binding.btnCreate.setOnClickListener {
-            findNavController().navigate(R.id.action_myResumesFragment_to_createResumeFragment)
+            findNavController().navigate(R.id.action_vacanciesFragment3_to_createVacancyFragment)
         }
 
         binding.swipeContainer.setOnRefreshListener {
-            viewModel.getMyResumesList()
+            viewModelMy.getSampleList()
         }
     }
 
     private fun setUpSampleList() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = myResumesAdapter
+            adapter = vacanciesAdapter
         }
     }
 
-    private fun handleMyResumesList(list: List<ResumeItem>) {
+    private fun handleVacancyList(list: List<VacancyItem>) {
         binding.swipeContainer.isRefreshing = false
-        myResumesAdapter.submitList(list)
+        vacanciesAdapter.submitList(list)
         if (list.isEmpty()) binding.listIsEmpty.visibility = View.VISIBLE
         else binding.listIsEmpty.visibility = View.GONE
     }
 
-    private fun onItemClicked(sampleItem: ResumeItem) {
+    private fun onItemClicked(vacancyItem: VacancyItem) {
 
     }
-
-
 
 }

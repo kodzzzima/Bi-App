@@ -4,22 +4,33 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/bottom_nav_icon_color_selector.xml" value="0.1575" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/custom_button.xml" value="0.1645" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_settings.xml" value="0.1645" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/content_login.xml" value="0.1" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/dialog_login_employer.xml" value="0.234375" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/dialog_login_intern.xml" value="0.234375" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_create_resume.xml" value="0.25" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_create_vacancy.xml" value="0.264" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_my_resumes.xml" value="0.2" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_my_vacancies.xml" value="0.14537037037037037" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_resume_list.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_sample.xml" value="0.196875" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_settings.xml" value="0.10277777777777777" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_vacancies.xml" value="0.25" />
-        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/item_my_resume.xml" value="0.4" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_vacancies_list.xml" value="0.234375" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/item_my_resume.xml" value="0.136" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/item_resume_list.xml" value="0.12037037037037036" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/item_vacancy.xml" value="0.25" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/sample_item.xml" value="0.196875" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu_employer.xml" value="0.25" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu_intern.xml" value="0.234375" />
       </map>
     </option>
   </component>
