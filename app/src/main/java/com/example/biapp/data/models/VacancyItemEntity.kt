@@ -18,6 +18,12 @@ class VacancyItemEntity(
     val ref: String,
     @ColumnInfo(name = "company_name")
     val companyName: String,
+    @ColumnInfo(name = "salary")
+    val salary: String,
+    @ColumnInfo(name = "location")
+    val location: String,
+    @ColumnInfo(name = "schedule")
+    val schedule: String,
 ) {
 
     companion object {

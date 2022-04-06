@@ -32,6 +32,8 @@ class MyVacanciesViewHolder(
             title.text = vacancyItem.title
             ref.text = vacancyItem.ref
             company.text = vacancyItem.companyName
+            salary.text = vacancyItem.salary
+            location.text = vacancyItem.location
         }
 
         itemView.setOnClickListener { onItemClick(vacancyItem) }

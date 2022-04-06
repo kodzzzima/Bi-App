@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
@@ -19,14 +19,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
+            android:textStyle="bold"
             tools:text="Вакансия 1" />
+
+        <TextView
+            android:id="@+id/salary"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            tools:text="Зарплата 1" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            tools:text="Локация 1" />
 
         <TextView
             android:id="@+id/ref"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/blue_700"
             tools:text="http://bi.gavno.ru" />
 
         <TextView

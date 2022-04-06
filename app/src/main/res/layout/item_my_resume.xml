@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
+            android:textStyle="bold"
             tools:text="Резюме 1" />
 
         <TextView
@@ -26,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/blue_700"
             tools:text="http://bi.gavno.ru" />
 
         <TextView

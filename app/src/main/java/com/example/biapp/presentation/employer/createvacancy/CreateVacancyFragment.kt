@@ -51,6 +51,9 @@ class CreateVacancyFragment : Fragment(R.layout.fragment_create_vacancy) {
             if (binding.inputName.text.toString().isEmpty()
                 && binding.inputCompany.text.toString().isEmpty()
                 && binding.inputRef.text.toString().isEmpty()
+                && binding.inputSalary.text.toString().isEmpty()
+                && binding.inputLocation.text.toString().isEmpty()
+                && binding.inputSchedule.text.toString().isEmpty()
             ) {
                 Toast.makeText(requireContext(), "Заполните все поля", Toast.LENGTH_SHORT).show()
             } else {
@@ -59,7 +62,10 @@ class CreateVacancyFragment : Fragment(R.layout.fragment_create_vacancy) {
                     title = binding.inputName.text.toString(),
                     ref = binding.inputRef.text.toString(),
                     companyName = binding.inputCompany.text.toString(),
-                    userId = userLogin
+                    userId = userLogin,
+                    salary = binding.inputSalary.text.toString(),
+                    location = binding.inputLocation.text.toString(),
+                    schedule =binding.inputSchedule.text.toString()
                 )
                 viewModel.insertData(vacancyItem)
                 findNavController().navigateUp()

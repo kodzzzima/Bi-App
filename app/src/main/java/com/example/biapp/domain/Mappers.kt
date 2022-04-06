@@ -19,7 +19,10 @@ fun VacancyItem.toEntity() = VacancyItemEntity(
     userId = userId,
     title = title,
     ref = ref,
-    companyName = companyName
+    companyName = companyName,
+    salary = salary,
+    location = location,
+    schedule = schedule
 )
 
 fun VacancyItemEntity.toItem() = VacancyItem(
@@ -27,7 +30,10 @@ fun VacancyItemEntity.toItem() = VacancyItem(
     userId = userId,
     title = title,
     ref = ref,
-    companyName = companyName
+    companyName = companyName,
+    salary = salary,
+    location = location,
+    schedule = schedule
 )
 
 fun ResumeItem.toEntity() = ResumeItemEntity(

@@ -9,43 +9,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="Вааша профессия" />
+        android:text="Кем вы хотите работать?" />
 
     <EditText
         android:id="@+id/input_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp" />
+        android:layout_margin="12dp"
+        android:hint="Введите название должности" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="Введите ссылку на резюме" />
+        android:text="Резюме" />
 
     <EditText
         android:id="@+id/input_ref"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp" />
+        android:layout_margin="12dp"
+        android:hint="Ссылка на резюме" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="Укажите вашите контакты" />
+        android:text="Контакты" />
 
     <EditText
         android:id="@+id/input_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp" />
+        android:layout_margin="12dp"
+        android:hint="Укажите способы связи" />
 
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Создать вакансию"
+        android:text="Создать резюме"
         android:textSize="14sp" />
 </LinearLayout>

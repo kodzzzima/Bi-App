@@ -6,4 +6,7 @@ data class VacancyItem(
     val userId: String,
     val ref: String,
     val companyName: String,
+    val salary: String,
+    val location: String,
+    val schedule: String,
 )
