@@ -17,7 +17,7 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
-            android:label="Авторизация"
+            android:label="ISheep"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" >

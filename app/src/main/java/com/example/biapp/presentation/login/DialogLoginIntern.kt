@@ -74,7 +74,7 @@ class DialogLoginIntern() : BottomSheetDialogFragment() {
 
                 setNavView()
             } else {
-                Toast.makeText(requireContext(), "Неправильный пароль", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "Неправильный пароль", Toast.LENGTH_SHORT).show()
             }
         }
 
