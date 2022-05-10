@@ -9,4 +9,5 @@ data class VacancyItem(
     val salary: String,
     val location: String,
     val schedule: String,
+    val canShowMessage: Boolean,
 )

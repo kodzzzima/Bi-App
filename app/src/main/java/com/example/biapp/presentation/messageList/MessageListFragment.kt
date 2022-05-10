@@ -9,10 +9,10 @@ import com.example.biapp.R
 import com.example.biapp.databinding.FragmentMessageListBinding
 import com.example.biapp.presentation.employer.resumelist.ResumeItem
 import com.example.biapp.presentation.employer.resumelist.ResumeListAdapter
-import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
 
-@EntryPoint
+@AndroidEntryPoint
 class MessageListFragment : Fragment(R.layout.fragment_message_list) {
 
     private val viewModel: MessageListViewModel by viewModels()

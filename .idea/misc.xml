@@ -9,6 +9,7 @@
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/custom_button.xml" value="0.1645" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/drawable/ic_settings.xml" value="0.1645" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/dialog_login_intern.xml" value="0.234375" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_create_resume.xml" value="0.25" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_create_vacancy.xml" value="0.264" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_filter.xml" value="0.25" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_login.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_message.xml" value="0.16" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/layout/fragment_message_list.xml" value="0.25" />
@@ -37,6 +39,8 @@
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu_employer.xml" value="0.25" />
         <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/bottom_menu_intern.xml" value="0.234375" />
+        <entry key="..\:/Users/costy/AndroidStudioProjects/BiApp/app/src/main/res/menu/menu_filter.xml" value="0.3625" />
+        <entry key="..\:/Users/costy/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.17685185185185184" />
       </map>
     </option>
   </component>

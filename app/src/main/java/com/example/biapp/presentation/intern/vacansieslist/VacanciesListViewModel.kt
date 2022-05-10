@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.biapp.data.AppRepository
-import com.example.biapp.data.local.sample.SampleItem
 import com.example.biapp.presentation.employer.vacancies.VacancyItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -30,6 +29,12 @@ class VacanciesListViewModel @Inject constructor(
     fun getSampleList() {
         launch {
             _vacanciesLiveData.postValue(appRepository.getAllLocalVacancies())
+        }
+    }
+
+    fun searchDatabase(searchQuery: String) {
+        launch {
+            _vacanciesLiveData.postValue(appRepository.getVacanciesBySearch(searchQuery))
         }
     }
 

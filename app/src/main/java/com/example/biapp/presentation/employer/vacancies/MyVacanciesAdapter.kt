@@ -2,6 +2,7 @@ package com.example.biapp.presentation.employer.vacancies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,7 @@ class MyVacanciesViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(vacancyItem: VacancyItem) {
         with(binding) {
+            message.isGone = true
             title.text = vacancyItem.title
             ref.text = vacancyItem.ref
             company.text = vacancyItem.companyName

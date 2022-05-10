@@ -22,7 +22,8 @@ fun VacancyItem.toEntity() = VacancyItemEntity(
     companyName = companyName,
     salary = salary,
     location = location,
-    schedule = schedule
+    schedule = schedule,
+    canShowMessage = canShowMessage
 )
 
 fun VacancyItemEntity.toItem() = VacancyItem(
@@ -33,7 +34,8 @@ fun VacancyItemEntity.toItem() = VacancyItem(
     companyName = companyName,
     salary = salary,
     location = location,
-    schedule = schedule
+    schedule = schedule,
+    canShowMessage = canShowMessage
 )
 
 fun ResumeItem.toEntity() = ResumeItemEntity(

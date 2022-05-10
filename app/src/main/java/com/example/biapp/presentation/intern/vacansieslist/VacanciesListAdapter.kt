@@ -2,6 +2,7 @@ package com.example.biapp.presentation.intern.vacansieslist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,7 @@ class VacanciesListViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(vacancyItem: VacancyItem) {
         with(binding) {
+            message.isVisible = vacancyItem.canShowMessage
             title.text = vacancyItem.title
             ref.text = vacancyItem.ref
             company.text = vacancyItem.companyName
@@ -37,7 +39,10 @@ class VacanciesListViewHolder(
             location.text = vacancyItem.location
         }
 
-        itemView.setOnClickListener { onItemClick(vacancyItem) }
+//        itemView.setOnClickListener { onItemClick(vacancyItem) }
+        binding.message.setOnClickListener {
+            onItemClick(vacancyItem)
+        }
     }
 }
 

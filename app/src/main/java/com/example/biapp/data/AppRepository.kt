@@ -2,10 +2,7 @@ package com.example.biapp.data
 
 import com.example.biapp.data.local.sample.LocalDataSource
 import com.example.biapp.data.local.sample.SampleItem
-import com.example.biapp.data.models.ResumeItemEntity
-import com.example.biapp.data.models.UserEntity
 import com.example.biapp.data.models.UserItem
-import com.example.biapp.data.models.VacancyItemEntity
 import com.example.biapp.domain.toEntity
 import com.example.biapp.domain.toItem
 import com.example.biapp.presentation.employer.resumelist.ResumeItem
@@ -24,6 +21,8 @@ interface AppRepository {
 
     suspend fun getUser(login: String): UserItem
     suspend fun insertUser(userEntity: UserItem)
+
+    suspend fun getVacanciesBySearch(searchQuery: String): List<VacancyItem>
 }
 
 class AppRepositoryImpl @Inject constructor(
@@ -66,5 +65,10 @@ class AppRepositoryImpl @Inject constructor(
 
     override suspend fun insertUser(userItem: UserItem) {
         localDataSource.insertUser(userItem.toEntity())
+    }
+
+
+    override suspend fun getVacanciesBySearch(searchQuery: String): List<VacancyItem> {
+        return localDataSource.getVacanciesBySearch(searchQuery).map { it.toItem() }
     }
 }

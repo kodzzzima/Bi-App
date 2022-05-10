@@ -44,13 +44,32 @@
             android:textColor="@color/blue_700"
             tools:text="http://bi.gavno.ru" />
 
-        <TextView
-            android:id="@+id/company"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_margin="12dp"
-            tools:text="Яндекс" />
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="6dp"
+                android:gravity="center"
+                android:padding="6dp"
+                tools:text="Яндекс" />
+
+            <ImageView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="6dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_message" />
+        </LinearLayout>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

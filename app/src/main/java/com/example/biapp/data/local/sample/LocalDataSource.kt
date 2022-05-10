@@ -4,7 +4,6 @@ import com.example.biapp.data.models.ResumeItemEntity
 import com.example.biapp.data.models.UserEntity
 import com.example.biapp.data.models.VacancyItemEntity
 import javax.inject.Inject
-import kotlin.math.log
 
 interface LocalDataSource {
     suspend fun getAll(): List<SampleEntity>
@@ -18,6 +17,8 @@ interface LocalDataSource {
 
     suspend fun insertUser(userEntity: UserEntity)
     suspend fun getUser(login: String): UserEntity?
+
+    suspend fun getVacanciesBySearch(query: String): List<VacancyItemEntity>
 }
 
 class LocalDataSourceImpl @Inject constructor(
@@ -58,5 +59,9 @@ class LocalDataSourceImpl @Inject constructor(
 
     override suspend fun getUser(login: String): UserEntity? {
         return sampleDao.getUser(login)
+    }
+
+    override suspend fun getVacanciesBySearch(query: String): List<VacancyItemEntity> {
+        return sampleDao.searchDatabase(query)
     }
 }

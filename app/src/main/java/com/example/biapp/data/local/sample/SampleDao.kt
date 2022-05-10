@@ -37,4 +37,7 @@ interface SampleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(userEntity: UserEntity)
+
+    @Query("SELECT * FROM ${VacancyItemEntity.TABLE_NAME} WHERE title LIKE :searchQuery OR schedule LIKE :searchQuery")
+    suspend fun searchDatabase(searchQuery: String): List<VacancyItemEntity>
 }

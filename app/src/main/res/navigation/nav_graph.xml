@@ -60,7 +60,11 @@
     <fragment
         android:id="@+id/vacanciesListFragment"
         android:name="com.example.biapp.presentation.intern.vacansieslist.VacanciesListFragment"
-        android:label="Вакансии" />
+        android:label="Вакансии" >
+        <action
+            android:id="@+id/action_vacanciesListFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createResumeFragment"
         android:name="com.example.biapp.presentation.intern.createresume.CreateResumeFragment"
@@ -70,4 +74,8 @@
         android:id="@+id/mainActivity"
         android:name="com.example.biapp.presentation.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.biapp.presentation.filter.FilterFragment"
+        android:label="Фильтр" />
 </navigation>

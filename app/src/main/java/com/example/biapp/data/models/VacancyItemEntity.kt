@@ -24,6 +24,8 @@ class VacancyItemEntity(
     val location: String,
     @ColumnInfo(name = "schedule")
     val schedule: String,
+    @ColumnInfo(name = "can_show_message")
+    val canShowMessage: Boolean,
 ) {
 
     companion object {
