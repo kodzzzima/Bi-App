@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -121,7 +122,8 @@ class VacanciesListFragment : Fragment(R.layout.fragment_vacancies_list) {
     }
 
     private fun onItemClicked(vacancyItem: VacancyItem) {
-
+        val bundle = bundleOf("chatTitle" to vacancyItem.companyName)
+        findNavController().navigate(R.id.action_vacanciesListFragment_to_singleChatFragment, bundle)
     }
 
 }

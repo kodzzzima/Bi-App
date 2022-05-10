@@ -1,15 +1,16 @@
 package com.example.biapp.presentation.messageList
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.biapp.R
 import com.example.biapp.databinding.FragmentMessageListBinding
-import com.example.biapp.presentation.employer.resumelist.ResumeItem
-import com.example.biapp.presentation.employer.resumelist.ResumeListAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -19,44 +20,32 @@ class MessageListFragment : Fragment(R.layout.fragment_message_list) {
 
     private lateinit var binding: FragmentMessageListBinding
 
-    private val resumeListAdapter by lazy {
-        ResumeListAdapter(onItemClick = ::onItemClicked)
-    }
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentMessageListBinding.bind(view)
 
-        setupClickListeners()
-
-        setUpSampleList()
-
-        viewModel.liveData.observe(viewLifecycleOwner, ::handleResumeList)
-    }
-
-    private fun setupClickListeners() {
-
-        binding.swipeContainer.setOnRefreshListener {
-            viewModel.getSampleList()
+        viewModel.liveData.observe(viewLifecycleOwner) {
+            val userChat1Title = sharedPreferences.getString("${it}_chat1title", "") ?: ""
+            val userChat1Message = sharedPreferences.getString("${it}_chat1message", "") ?: ""
+            if (userChat1Title.isEmpty()) {
+                binding.listIsEmpty.visibility = View.VISIBLE
+                binding.card.visibility = View.GONE
+            } else {
+                binding.company.text = userChat1Title
+                binding.message.text = "Вы: " + userChat1Message
+            }
+            binding.card.setOnClickListener {
+                val bundle = bundleOf("chatTitle" to userChat1Title)
+                findNavController().navigate(R.id.action_messageListFragment_to_singleChatFragment,
+                    bundle)
+            }
         }
 
+
     }
 
-    private fun setUpSampleList() {
-        binding.recycler.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = resumeListAdapter
-        }
-    }
-
-    private fun handleResumeList(list: List<ResumeItem>) {
-
-        binding.swipeContainer.isRefreshing = false
-        resumeListAdapter.submitList(list)
-        if (list.isEmpty()) binding.listIsEmpty.visibility = View.VISIBLE
-        else binding.listIsEmpty.visibility = View.GONE
-    }
-
-    private fun onItemClicked(resumeItem: ResumeItem) {}
 }

@@ -9,7 +9,7 @@
         android:id="@+id/loginFragment"
         android:name="com.example.biapp.presentation.login.LoginFragment"
         android:label="Авторизация"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_myResumesFragment"
             app:destination="@id/myResumesFragment"
@@ -25,7 +25,7 @@
         android:id="@+id/myResumesFragment"
         android:name="com.example.biapp.presentation.intern.myresumes.MyResumesFragment"
         android:label="Мои резюме"
-        tools:layout="@layout/fragment_my_resumes" >
+        tools:layout="@layout/fragment_my_resumes">
         <action
             android:id="@+id/action_myResumesFragment_to_createResumeFragment"
             app:destination="@id/createResumeFragment" />
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/vacanciesFragment3"
         android:name="com.example.biapp.presentation.employer.vacancies.MyVacanciesFragment"
-        android:label="Мои вакансии" >
+        android:label="Мои вакансии">
         <action
             android:id="@+id/action_vacanciesFragment3_to_createVacancyFragment"
             app:destination="@id/createVacancyFragment" />
@@ -46,7 +46,7 @@
         android:id="@+id/settingsFragment"
         android:name="com.example.biapp.presentation.settings.SettingsFragment"
         android:label="Настройки"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_loginFragment"
             app:destination="@id/loginFragment"
@@ -60,16 +60,26 @@
     <fragment
         android:id="@+id/vacanciesListFragment"
         android:name="com.example.biapp.presentation.intern.vacansieslist.VacanciesListFragment"
-        android:label="Вакансии" >
+        android:label="Вакансии">
         <action
             android:id="@+id/action_vacanciesListFragment_to_filterFragment"
             app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_vacanciesListFragment_to_singleChatFragment"
+            app:destination="@id/singleChatFragment">
+            <argument
+                android:name="chatTitle"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/createResumeFragment"
         android:name="com.example.biapp.presentation.intern.createresume.CreateResumeFragment"
         android:label="CreateResumeFragment" />
-    <action android:id="@+id/action_global_myResumesFragment" app:destination="@id/myResumesFragment" />
+    <action
+        android:id="@+id/action_global_myResumesFragment"
+        app:destination="@id/myResumesFragment" />
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.biapp.presentation.MainActivity"
@@ -78,4 +88,21 @@
         android:id="@+id/filterFragment"
         android:name="com.example.biapp.presentation.filter.FilterFragment"
         android:label="Фильтр" />
+    <fragment
+        android:id="@+id/singleChatFragment"
+        android:name="com.example.biapp.presentation.message.SingleChatFragment"
+        android:label="SingleChatFragment" />
+    <fragment
+        android:id="@+id/messageListFragment"
+        android:name="com.example.biapp.presentation.messageList.MessageListFragment"
+        android:label="Чаты" >
+        <action
+            android:id="@+id/action_messageListFragment_to_singleChatFragment"
+            app:destination="@id/singleChatFragment">
+            <argument
+                android:name="chatTitle"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
 </navigation>

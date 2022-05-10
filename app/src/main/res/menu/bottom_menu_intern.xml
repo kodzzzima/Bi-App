@@ -10,7 +10,13 @@
         android:icon="@drawable/ic_person"
         android:title="Мои резюме" />
     <item
+        android:id="@+id/messageListFragment"
+        android:icon="@drawable/ic_message"
+        android:title="Чаты" />
+    <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_settings"
         android:title="Настройки" />
+
+
 </menu>
