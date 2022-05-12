@@ -2,6 +2,7 @@ package com.example.biapp.presentation.login
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,12 +17,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.biapp.R
 import com.example.biapp.databinding.DialogLoginEmployerBinding
-import com.example.biapp.databinding.DialogLoginInternBinding
 import com.example.biapp.utils.Authorized
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.dialog_login_employer.login_link
 
 @AndroidEntryPoint
 class DialogLoginEmployer() : BottomSheetDialogFragment() {
@@ -49,6 +50,7 @@ class DialogLoginEmployer() : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        login_link.movementMethod = LinkMovementMethod.getInstance()
         binding.btnGo.setOnClickListener {
             if (binding.editLogin.text.toString().isEmpty() &&
                 binding.editPassword.text.toString().isEmpty()

@@ -2,4 +2,5 @@
     <string name="app_name">InternSheep</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_link">Нажимая кнопку "Войти", вы соглашаетесь с <a href="https://telegra.ph/POLITIKA-KONFIDENCIALNOSTI-DLYA-MOBILNOGO-PRILOZHENIYA-INTERNSHEEP-05-12">политикой конфиденциальности</a> и <a href="https://telegra.ph/Dogovor-oferta-na-okazanie-uslug-05-12">договором оферты</a></string>
 </resources>

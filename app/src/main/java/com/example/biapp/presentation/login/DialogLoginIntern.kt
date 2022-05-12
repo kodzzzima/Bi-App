@@ -2,6 +2,7 @@ package com.example.biapp.presentation.login
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +13,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.biapp.R
 import com.example.biapp.databinding.DialogLoginInternBinding
-import com.example.biapp.presentation.intern.vacansieslist.VacanciesListViewModel
 import com.example.biapp.utils.Authorized
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.dialog_login_intern.login_link
 
 @AndroidEntryPoint
 class DialogLoginIntern() : BottomSheetDialogFragment() {
@@ -50,6 +50,8 @@ class DialogLoginIntern() : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        login_link.movementMethod = LinkMovementMethod.getInstance()
+
         binding.btnGo.setOnClickListener {
             if (binding.editLogin.text.toString().isEmpty() &&
                 binding.editPassword.text.toString().isEmpty()
