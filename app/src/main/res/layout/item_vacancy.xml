@@ -41,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
+            android:autoLink="web"
             android:textColor="@color/blue_700"
             tools:text="http://bi.gavno.ru" />
 
